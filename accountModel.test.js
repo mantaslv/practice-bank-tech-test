@@ -30,6 +30,8 @@ describe('AccountModel', () => {
             account.deposit(3000.00);
             account.withdraw(500.00);
             expect(account.getBalance()).toEqual(2500.00);
+            account.withdraw(0.01);
+            expect(account.getBalance()).toEqual(2499.99);
         });
     });
 });
