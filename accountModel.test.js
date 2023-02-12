@@ -15,4 +15,10 @@ describe('AccountModel', () => {
         account.deposit(13.29);
         expect(account.getBalance()).toEqual(3013.29);
     });
+
+    it('does not allow negative deposits to be made', () => {
+        const account = new AccountModel();
+        account.deposit(1000.00);
+        expect(() => {account.deposit(-500.00)}).toThrow('ERROR: Deposit made must be greater than zero');
+    });
 });
