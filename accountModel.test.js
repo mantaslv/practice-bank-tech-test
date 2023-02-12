@@ -10,5 +10,7 @@ describe('AccountModel', () => {
         const account = new AccountModel();
         account.deposit(1000.00);
         expect(account.getBalance()).toEqual(1000.00);
-    })
+        account.deposit(2000.00);
+        expect(account.getBalance()).toEqual(3000.00);
+    });
 });
