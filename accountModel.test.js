@@ -12,5 +12,7 @@ describe('AccountModel', () => {
         expect(account.getBalance()).toEqual(1000.00);
         account.deposit(2000.00);
         expect(account.getBalance()).toEqual(3000.00);
+        account.deposit(13.29);
+        expect(account.getBalance()).toEqual(3013.29);
     });
 });
