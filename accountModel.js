@@ -9,12 +9,15 @@ class AccountModel {
 
     deposit(amount) {
         if (amount <= 0) {
-            throw 'ERROR: Deposit made must be greater than zero';
+            throw 'ERROR: amount must be greater than zero';
         }
         this.balance += amount;
     }
 
     withdraw(amount) {
+        if (amount <= 0) {
+            throw 'ERROR: amount must be greater than zero';
+        }
         this.balance -= amount;
     }
 }

@@ -20,7 +20,7 @@ describe('AccountModel', () => {
         it('does not allow negative deposits to be made', () => {
             const account = new AccountModel();
             account.deposit(1000.00);
-            expect(() => {account.deposit(-500.00)}).toThrow('ERROR: Deposit made must be greater than zero');
+            expect(() => {account.deposit(-500.00)}).toThrow('ERROR: amount must be greater than zero');
         });
     });
 
@@ -32,6 +32,12 @@ describe('AccountModel', () => {
             expect(account.getBalance()).toEqual(2500.00);
             account.withdraw(0.01);
             expect(account.getBalance()).toEqual(2499.99);
+        });
+
+        it('does not allow negative withdrawals to be made', () => {
+            const account = new AccountModel();
+            account.deposit(1000.00);
+            expect(() => {account.withdraw(-500.00)}).toThrow('ERROR: amount must be greater than zero');
         });
     });
 });
