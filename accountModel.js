@@ -9,6 +9,11 @@ class AccountModel {
 
     deposit(amount) {
         this.throwErrorIfNegative(amount);
+
+        if ((amount * 100).toString().split('.').length > 1) {
+            throw 'ERROR: amount must be in pounds and whole pence'
+        }
+
         this.balance += amount;
     }
 
