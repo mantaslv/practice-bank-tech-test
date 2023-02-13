@@ -3,6 +3,10 @@ class AccountModel {
         this.balance = 0;
     }
 
+    getTransactions() {
+        return [{date: '2022-03-01'}];
+    }
+
     getBalance() {
         return this.balance;
     }
