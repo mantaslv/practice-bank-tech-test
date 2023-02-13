@@ -18,10 +18,7 @@ class AccountModel {
 
         this.balance += amount;
 
-        const transaction = {
-            date: new Date().toLocaleDateString('en-GB'),
-        };
-        this.transactions.push(transaction);
+        this.recordTransaction(amount);
     }
 
     withdraw(amount) {
@@ -30,6 +27,10 @@ class AccountModel {
 
         this.balance -= amount;
 
+        this.recordTransaction(amount);
+    }
+
+    recordTransaction(amount) {
         const transaction = {
             date: new Date().toLocaleDateString('en-GB'),
         };
