@@ -71,6 +71,8 @@ describe('AccountModel', () => {
         it('records deposit amounts', () => {
             account.deposit(1000.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00]);
+            account.deposit(2000.00);
+            expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00]);
         });
     });
 });
