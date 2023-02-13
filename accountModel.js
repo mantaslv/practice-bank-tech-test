@@ -32,14 +32,19 @@ class AccountModel {
 
     recordTransaction(type, amount) {
         let credit = null;
+        let debit = null;
         
         if (type === 'credit') {
             credit = amount;
+        };
+        if (type === 'debit') {
+            debit = amount;
         }
 
         const transaction = {
             date: new Date().toLocaleDateString('en-GB'),
             credit: credit,
+            debit: debit
         };
         this.transactions.push(transaction);
     }

@@ -68,13 +68,15 @@ describe('AccountModel', () => {
             expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020', '06/04/2020', '23/05/2020']);
         });
 
-        it('records deposit amounts', () => {
+        it('records credit and debit amounts in correct columns', () => {
             account.deposit(1000.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00]);
             account.deposit(2000.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00]);
             account.withdraw(500.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00, null]);
+            account.withdraw(11.11);
+            expect(account.getTransactions().map((e) => e.debit)).toEqual([null, null, 500.00, 11.11]);
         });
     });
 });
