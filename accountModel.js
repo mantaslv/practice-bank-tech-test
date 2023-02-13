@@ -33,6 +33,7 @@ class AccountModel {
     recordTransaction(amount) {
         const transaction = {
             date: new Date().toLocaleDateString('en-GB'),
+            credit: amount
         };
         this.transactions.push(transaction);
     }
