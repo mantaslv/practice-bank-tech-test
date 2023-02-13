@@ -44,7 +44,8 @@ class AccountModel {
         const transaction = {
             date: new Date().toLocaleDateString('en-GB'),
             credit: credit,
-            debit: debit
+            debit: debit,
+            balance: this.balance
         };
         this.transactions.push(transaction);
     }

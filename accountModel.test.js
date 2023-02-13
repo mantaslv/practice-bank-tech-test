@@ -78,5 +78,13 @@ describe('AccountModel', () => {
             account.withdraw(11.11);
             expect(account.getTransactions().map((e) => e.debit)).toEqual([null, null, 500.00, 11.11]);
         });
+
+        it('records correct balance total', () => {
+            account.deposit(1000.00);
+            account.deposit(2000.00);
+            account.withdraw(500.00);
+            account.withdraw(11.11);
+            expect(account.getTransactions().map((e) => e.balance)).toEqual([1000.00, 3000.00, 2500.00, 2488.89]);
+        });
     });
 });
