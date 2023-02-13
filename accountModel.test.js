@@ -73,6 +73,8 @@ describe('AccountModel', () => {
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00]);
             account.deposit(2000.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00]);
+            account.withdraw(500.00);
+            expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00, null]);
         });
     });
 });
