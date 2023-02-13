@@ -53,13 +53,16 @@ describe('AccountModel', () => {
 
     describe('gets transactions', () => {
         beforeAll(() => {
-            jest.useFakeTimers('modern');
+            jest.useFakeTimers();
         });
 
         it('records date', () => {
-            jest.setSystemTime(new Date(2020, 3, 1));
+            jest.setSystemTime(new Date("2020-03-01"));
             account.deposit(1000.00);
-            expect(account.getTransactions().map((e) => e.date)).toEqual(['2022-03-01']);
+            expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020']);
+            jest.setSystemTime(new Date("2020-04-06"));
+            account.deposit(2000.00);
+            expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020', '06/04/2020']);
         })
     })
 });

@@ -1,10 +1,11 @@
 class AccountModel {
     constructor() {
         this.balance = 0;
+        this.transactions = [];
     }
 
     getTransactions() {
-        return [{date: '2022-03-01'}];
+        return this.transactions;
     }
 
     getBalance() {
@@ -16,6 +17,11 @@ class AccountModel {
         this.throwErrorIfMoreThanThreeDP(amount);
 
         this.balance += amount;
+
+        const transaction = {
+            date: new Date().toLocaleDateString('en-GB'),
+        };
+        this.transactions.push(transaction);
     }
 
     withdraw(amount) {
