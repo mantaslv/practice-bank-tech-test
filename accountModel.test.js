@@ -44,5 +44,11 @@ describe('AccountModel', () => {
             account.deposit(1000.00);
             expect(() => {account.withdraw(-500.00)}).toThrow('ERROR: amount must be greater than zero');
         });
+
+        it('does not allow withrawals of smaller than a penny division', () => {
+            const account = new AccountModel();
+            account.deposit(1000.00);
+            expect(() => {account.withdraw(0.005)}).toThrow('ERROR: amount must be in pounds and whole pence');
+        });
     });
 });
