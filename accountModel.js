@@ -9,20 +9,14 @@ class AccountModel {
 
     deposit(amount) {
         this.throwErrorIfNegative(amount);
-
-        if ((amount * 100).toString().split('.').length > 1) {
-            throw 'ERROR: amount must be in pounds and whole pence'
-        }
+        this.throwErrorIfMoreThanThreeDP(amount);
 
         this.balance += amount;
     }
 
     withdraw(amount) {
         this.throwErrorIfNegative(amount);
-
-        if ((amount * 100).toString().split('.').length > 1) {
-            throw 'ERROR: amount must be in pounds and whole pence'
-        }
+        this.throwErrorIfMoreThanThreeDP(amount);
 
         this.balance -= amount;
     }
@@ -30,6 +24,12 @@ class AccountModel {
     throwErrorIfNegative(amount) {
         if (amount <= 0) {
             throw 'ERROR: amount must be greater than zero';
+        }
+    }
+
+    throwErrorIfMoreThanThreeDP(amount) {
+        if ((amount * 100).toString().split('.').length > 1) {
+            throw 'ERROR: amount must be in pounds and whole pence'
         }
     }
 }
