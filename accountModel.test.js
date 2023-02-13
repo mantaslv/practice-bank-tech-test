@@ -63,6 +63,9 @@ describe('AccountModel', () => {
             jest.setSystemTime(new Date("2020-04-06"));
             account.deposit(2000.00);
             expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020', '06/04/2020']);
+            jest.setSystemTime(new Date("2020-05-23"));
+            account.withdraw(500.00);
+            expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020', '06/04/2020', '23/05/2020']);
         })
     })
 });

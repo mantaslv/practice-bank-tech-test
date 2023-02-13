@@ -29,6 +29,11 @@ class AccountModel {
         this.throwErrorIfMoreThanThreeDP(amount);
 
         this.balance -= amount;
+
+        const transaction = {
+            date: new Date().toLocaleDateString('en-GB'),
+        };
+        this.transactions.push(transaction);
     }
 
     throwErrorIfNegative(amount) {
