@@ -31,15 +31,11 @@ class AccountModel {
     }
 
     recordTransaction(type, amount) {
-        let credit = null;
-        let debit = null;
+        let credit = "";
+        let debit = "";
         
-        if (type === 'credit') {
-            credit = amount;
-        };
-        if (type === 'debit') {
-            debit = amount;
-        }
+        if (type === 'credit') credit = amount;
+        if (type === 'debit') debit = amount;
 
         const transaction = {
             date: new Date().toLocaleDateString('en-GB'),

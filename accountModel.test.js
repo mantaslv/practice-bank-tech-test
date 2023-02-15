@@ -1,6 +1,6 @@
 const AccountModel = require('./accountModel');
 
-describe('AccountModel', () => {
+describe(AccountModel, () => {
     let account;
 
     beforeEach(() => {
@@ -52,11 +52,8 @@ describe('AccountModel', () => {
     });
 
     describe('gets transactions', () => {
-        beforeAll(() => {
-            jest.useFakeTimers();
-        });
-
         it('records date', () => {
+            jest.useFakeTimers();
             jest.setSystemTime(new Date("2020-03-01"));
             account.deposit(1000.00);
             expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020']);
@@ -66,6 +63,7 @@ describe('AccountModel', () => {
             jest.setSystemTime(new Date("2020-05-23"));
             account.withdraw(500.00);
             expect(account.getTransactions().map((e) => e.date)).toEqual(['01/03/2020', '06/04/2020', '23/05/2020']);
+            jest.useRealTimers();
         });
 
         it('records credit and debit amounts in correct columns', () => {
@@ -74,9 +72,9 @@ describe('AccountModel', () => {
             account.deposit(2000.00);
             expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00]);
             account.withdraw(500.00);
-            expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00, null]);
+            expect(account.getTransactions().map((e) => e.credit)).toEqual([1000.00, 2000.00, ""]);
             account.withdraw(11.11);
-            expect(account.getTransactions().map((e) => e.debit)).toEqual([null, null, 500.00, 11.11]);
+            expect(account.getTransactions().map((e) => e.debit)).toEqual(["", "", 500.00, 11.11]);
         });
 
         it('records correct balance total', () => {
