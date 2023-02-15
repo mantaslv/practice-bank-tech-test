@@ -12,7 +12,12 @@ class AccountView {
         
         const body = this.accountTransactions
             .map((el) => (
-                [el.date, el.credit, el.debit, el.balance]
+                [
+                    el.date,
+                    el.credit === null ? "" : el.credit.toFixed(2),
+                    el.debit, 
+                    el.balance.toFixed(2)
+                ]
                 .join(' || ')
                 .replace(/  +/g, ' ')
             ));
