@@ -16,7 +16,7 @@ class AccountView {
                     el.date,
                     el.credit === null ? "" : el.credit.toFixed(2),
                     el.debit === null ? "" : el.debit.toFixed(2), 
-                    el.balance 
+                    el.balance.toFixed(2)
                 ]
                 .join(' || ')
                 .replace(/  +/g, ' ')
