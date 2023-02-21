@@ -1,6 +1,8 @@
 # Practice Bank Tech Test
 
-This app allows a user to make deposits and withdrawals to a bank account as well as printing a statement to show a history of transactions with data including date made, the amount (whether credit or debit) and a balance. Interaction of the app is conducted through the Node REPL.
+This app allows a user to make deposits and withdrawals to a bank account as well as printing a statement to show a history of transactions with data including the date the transaction was made, the amount (whether credit or debit) and a balance. 
+
+Interaction of the app is conducted through the Node REPL.
 
 ## Installation and Dependencies
 
@@ -34,30 +36,15 @@ date || credit || debit || balance
 21/02/2023 || 1000.00 || || 1000.00
 ```
 Or run `node exampleRun.js` in the console and see the same result:
+
 ![image](./exampleRun_result_screenshot.png)
 
+## Approach to Code Design
 
+Test driven development was used from the inception, following the red, green, refactor process. Commits were made after every passed test to track this. The code has been kept DRY with as much code refactored into seperate methods as made sense for reusability and readability. 
 
-## Specification
+The idea behind the code design was to make the user interface as simple as possible with most of the work going on behind the scenes. Dates were mocked to test the model class to ensure that the requirement of transactions being made on different days was met. The app also throws an error if transactions with negative amounts are tried as well as any smaller fractions than a penny.
 
-### Requirements
+## Code Structure
 
-* You should be able to interact with your code via a REPL like IRB or Node.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
-
-### Acceptance criteria
-
-**Given** a client makes a deposit of 1000 on 10-01-2023  
-**And** a deposit of 2000 on 13-01-2023  
-**And** a withdrawal of 500 on 14-01-2023  
-**When** she prints her bank statement  
-**Then** she would see
-
-```
-date || credit || debit || balance
-14/01/2023 || || 500.00 || 2500.00
-13/01/2023 || 2000.00 || || 3000.00
-10/01/2023 || 1000.00 || || 1000.00
-```
+An account model was created to start with, allowing the creation of a new account and get balance function to allow the balance to be retrieved. Functionality was added to deposit and withdraw amounts from the account, followed by a way of recording the transactions with the date made. The logic was kept in the model class and a view class was created for formatting the saved transactions into the required statement format.
