@@ -10,11 +10,11 @@ This app allows a user to make deposits and withdrawals to a bank account as wel
 
 ## Running the App
 
-The REPL environment can be started by running `node` in the command prompt/terminal.
+The REPL environment can be started by running `node` in the console.
 
 Try the following commands to test out the functionality:
 
-```
+```js
 const AccountModel = require('./accountModel');
 const AccountView = require('./accountView');
 
@@ -26,6 +26,15 @@ account.withdraw(499.99);
 const accountView = new AccountView(account);
 accountView.printStatement();
 ```
+This is printed to the terminal:
+```
+date || credit || debit || balance
+21/02/2023 || || 499.99 || 2500.01
+21/02/2023 || 2000.00 || || 3000.00
+21/02/2023 || 1000.00 || || 1000.00
+```
+Or run `node exampleRun.js` in the console and see the same result:
+![image](./exampleRun_result_screenshot.png)
 
 
 
