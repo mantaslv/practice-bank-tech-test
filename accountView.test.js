@@ -3,7 +3,7 @@ const AccountModel = require('./accountModel');
 
 jest.mock('./accountModel');
 
-describe(AccountView, () => {
+describe('AccountView unit tests', () => {
     beforeEach(() => {
         AccountModel.mockClear();
     });
@@ -13,7 +13,7 @@ describe(AccountView, () => {
 
         mockAccountModel.getTransactions.mockImplementation(() => 
             [
-                { date: '10/01/2023', credit: 1000, debit: null, balance: 1000 }
+                { date: '10/01/2023', credit: 1000, debit: "", balance: 1000 }
             ]
         );
 
@@ -27,7 +27,7 @@ describe(AccountView, () => {
 
         mockAccountModel.getTransactions.mockImplementation(() => 
             [
-                { date: '14/01/2023', credit: null, debit: 500, balance: 2500 }
+                { date: '14/01/2023', credit: "", debit: 500, balance: 2500 }
             ]
         );
 
@@ -41,9 +41,9 @@ describe(AccountView, () => {
 
         mockAccountModel.getTransactions.mockImplementation(() => 
             [
-                { date: '10/01/2023', credit: 1000, debit: null, balance: 1000 },
-                { date: '13/01/2023', credit: 2000, debit: null, balance: 3000 },
-                { date: '14/01/2023', credit: null, debit: 500, balance: 2500 }
+                { date: '10/01/2023', credit: 1000, debit: "", balance: 1000 },
+                { date: '13/01/2023', credit: 2000, debit: "", balance: 3000 },
+                { date: '14/01/2023', credit: "", debit: 500, balance: 2500 }
             ]
         );
 
@@ -65,9 +65,9 @@ describe(AccountView, () => {
 
         mockAccountModel.getTransactions.mockImplementation(() => 
             [
-                { date: '10/01/2023', credit: 23.84, debit: null, balance: 23.84 },
-                { date: '13/01/2023', credit: 63.92, debit: null, balance: 87.76 },
-                { date: '14/01/2023', credit: null, debit: 34.82, balance: 52.94 }
+                { date: '10/01/2023', credit: 23.84, debit: "", balance: 23.84 },
+                { date: '13/01/2023', credit: 63.92, debit: "", balance: 87.76 },
+                { date: '14/01/2023', credit: "", debit: 34.82, balance: 52.94 }
             ]
         );
 

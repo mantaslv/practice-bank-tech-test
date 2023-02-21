@@ -22,10 +22,10 @@ class AccountView {
     }
 
     formatToTwoDP(number) {
-        if (number === null) {
+        if (number === "") {
             return "";
         } else {
-            return number.toFixed(2);
+            return Number(number).toFixed(2);
         };
     }
 }

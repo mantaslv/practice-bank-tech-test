@@ -1,6 +1,6 @@
 const AccountModel = require('./accountModel');
 
-describe(AccountModel, () => {
+describe('AccountModel', () => {
     let account;
 
     beforeEach(() => {
