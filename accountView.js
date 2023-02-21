@@ -18,7 +18,9 @@ class AccountView {
             ));
 
         body.push(header);
-        return body.reverse().join('\n');
+        const result = body.reverse().join('\n');
+        console.log(result);
+        return result;
     }
 
     formatToTwoDP(number) {

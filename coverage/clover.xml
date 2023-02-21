@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1677011074353" clover="3.2.0">
-  <project timestamp="1677011074353" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="12" elements="55" coveredelements="55" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
+<coverage generated="1677018169828" clover="3.2.0">
+  <project timestamp="1677018169828" name="All files">
+    <metrics statements="35" coveredstatements="35" conditionals="10" coveredconditionals="10" methods="12" coveredmethods="12" elements="57" coveredelements="57" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
     <file name="accountModel.js" path="/Users/mantas/Code/bank-tech-test/accountModel.js">
       <metrics statements="23" coveredstatements="23" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
       <line num="3" count="11" type="stmt"/>
@@ -29,17 +29,19 @@
       <line num="62" count="3" type="stmt"/>
     </file>
     <file name="accountView.js" path="/Users/mantas/Code/bank-tech-test/accountView.js">
-      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <line num="3" count="5" type="stmt"/>
       <line num="7" count="5" type="stmt"/>
       <line num="8" count="5" type="stmt"/>
       <line num="10" count="11" type="stmt"/>
       <line num="20" count="5" type="stmt"/>
       <line num="21" count="5" type="stmt"/>
-      <line num="25" count="33" type="cond" truecount="2" falsecount="0"/>
-      <line num="26" count="11" type="stmt"/>
-      <line num="28" count="22" type="stmt"/>
-      <line num="33" count="2" type="stmt"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
+      <line num="27" count="33" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="11" type="stmt"/>
+      <line num="30" count="22" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
