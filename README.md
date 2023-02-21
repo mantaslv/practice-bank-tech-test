@@ -41,7 +41,7 @@ Or run `node exampleRun.js` in the console and see the same result:
 
 ## Approach to Code Design
 
-Test driven development was used from the inception, following the red, green, refactor process. Commits were made after every passed test to track this. The code has been kept DRY with as much code refactored into seperate methods as made sense for reusability and readability. 
+Test driven development was used from the inception, following the red, green, refactor process. Commits were made after every passed test to track this. Both classes are unit tested with any dependencies mocked and a integration test also features. The code has been kept DRY with as much code refactored into seperate methods as made sense for reusability and readability. 
 
 The idea behind the code design was to make the user interface as simple as possible with most of the work going on behind the scenes. Dates were mocked to test the model class to ensure that the requirement of transactions being made on different days was met. The app also throws an error if transactions with negative amounts are tried as well as any smaller fractions than a penny.
 
