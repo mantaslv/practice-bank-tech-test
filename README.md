@@ -1,5 +1,13 @@
 # Practice Bank Tech Test
 
+This app allows a user to make deposits and withdrawals to a bank account as well as printing a statement to show a history of transactions with data including date made, the amount (whether credit or debit) and a balance. Interaction of the app is conducted through the Node REPL.
+
+## Dependencies
+
+* Node is required to run this program.
+* To install dependencies, run `npm install`.
+* To run tests and see test coverage, run `npm test`.
+
 ## Specification
 
 ### Requirements
